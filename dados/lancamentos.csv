@@ -1,0 +1,188 @@
+lancamento_id,obra_id,data,categoria,fornecedor,descricao,valor
+1,2,2026-01-05,Alvenaria,Fornecedor Épsilon Ltda,Alvenaria - nota 431,5952.16
+2,8,2026-01-11,Acabamento,Fornecedor Delta Ltda,Acabamento - nota 942,1695.07
+3,3,2026-01-12,Fundação,Fornecedor Alfa Ltda,Fundação - nota 871,811.43
+4,2,2026-01-14,Equipamentos,Fornecedor Alfa Ltda,Equipamentos - nota 471,4621.43
+5,2,2026-01-15,Acabamento,Fornecedor Épsilon Ltda,Acabamento - nota 667,6702.29
+6,7,2026-01-15,Instalações elétricas,Fornecedor Épsilon Ltda,Instalações elétricas - nota 256,3258.72
+7,3,2026-01-25,Instalações elétricas,Fornecedor Épsilon Ltda,Instalações elétricas - nota 183,1057.00
+8,7,2026-01-25,Estrutura,Fornecedor Alfa Ltda,Estrutura - nota 353,6400.11
+9,1,2026-01-27,Instalações hidráulicas,Fornecedor Zeta Ltda,Instalações hidráulicas - nota 570,10859.17
+10,4,2026-01-27,Instalações hidráulicas,Fornecedor Alfa Ltda,Instalações hidráulicas - nota 441,6365.29
+11,5,2026-01-27,Instalações hidráulicas,Fornecedor Zeta Ltda,Instalações hidráulicas - nota 546,2532.12
+12,1,2026-01-28,Estrutura,Fornecedor Zeta Ltda,Estrutura - nota 333,7616.35
+13,6,2026-01-30,Equipamentos,Fornecedor Épsilon Ltda,Equipamentos - nota 355,2254.09
+14,3,2026-02-03,Instalações elétricas,Fornecedor Épsilon Ltda,Instalações elétricas - nota 853,3512.28
+15,6,2026-02-06,Instalações elétricas,Fornecedor Delta Ltda,Instalações elétricas - nota 517,1678.50
+16,3,2026-02-09,Alvenaria,Fornecedor Épsilon Ltda,Alvenaria - nota 169,2534.97
+17,8,2026-02-09,Acabamento,Fornecedor Épsilon Ltda,Acabamento - nota 763,4644.97
+18,9,2026-02-10,Alvenaria,Fornecedor Alfa Ltda,Alvenaria - nota 269,901.71
+19,9,2026-02-10,Equipamentos,Fornecedor Zeta Ltda,Equipamentos - nota 339,1725.19
+20,9,2026-02-11,Equipamentos,Fornecedor Épsilon Ltda,Equipamentos - nota 744,1453.08
+21,4,2026-02-12,Estrutura,Fornecedor Zeta Ltda,Estrutura - nota 252,5873.70
+22,1,2026-02-14,Instalações hidráulicas,Fornecedor Beta Ltda,Instalações hidráulicas - nota 987,2625.38
+23,6,2026-02-15,Acabamento,Fornecedor Beta Ltda,Acabamento - nota 254,1119.12
+24,9,2026-02-15,Equipamentos,Fornecedor Épsilon Ltda,Equipamentos - nota 140,2303.18
+25,7,2026-02-16,Fundação,Fornecedor Zeta Ltda,Fundação - nota 538,4335.80
+26,2,2026-02-17,Estrutura,Fornecedor Zeta Ltda,Estrutura - nota 597,3907.37
+27,5,2026-02-17,Alvenaria,Fornecedor Gama Ltda,Alvenaria - nota 627,3396.03
+28,8,2026-02-17,Instalações elétricas,Fornecedor Beta Ltda,Instalações elétricas - nota 837,5586.78
+29,9,2026-02-17,Instalações hidráulicas,Fornecedor Beta Ltda,Instalações hidráulicas - nota 221,2335.27
+30,9,2026-02-20,Fundação,Fornecedor Beta Ltda,Fundação - nota 790,941.17
+31,4,2026-02-21,Fundação,Fornecedor Zeta Ltda,Fundação - nota 533,6865.98
+32,5,2026-02-21,Acabamento,Fornecedor Beta Ltda,Acabamento - nota 788,5029.93
+33,3,2026-02-24,Fundação,Fornecedor Alfa Ltda,Fundação - nota 512,2985.67
+34,9,2026-02-24,Fundação,Fornecedor Beta Ltda,Fundação - nota 740,961.68
+35,1,2026-02-26,Acabamento,Fornecedor Alfa Ltda,Acabamento - nota 489,5087.15
+36,9,2026-02-26,Equipamentos,Fornecedor Alfa Ltda,Equipamentos - nota 687,1156.33
+37,8,2026-02-28,Equipamentos,Fornecedor Delta Ltda,Equipamentos - nota 470,3858.88
+38,3,2026-03-01,Acabamento,Fornecedor Beta Ltda,Acabamento - nota 296,716.88
+39,2,2026-03-04,Fundação,Fornecedor Zeta Ltda,Fundação - nota 649,2513.37
+40,9,2026-03-04,Equipamentos,Fornecedor Alfa Ltda,Equipamentos - nota 510,1085.89
+41,8,2026-03-07,Instalações hidráulicas,Fornecedor Épsilon Ltda,Instalações hidráulicas - nota 901,1942.12
+42,10,2026-03-08,Equipamentos,Fornecedor Alfa Ltda,Equipamentos - nota 745,6145.13
+43,2,2026-03-10,Estrutura,Fornecedor Beta Ltda,Estrutura - nota 775,4909.24
+44,7,2026-03-10,Instalações elétricas,Fornecedor Delta Ltda,Instalações elétricas - nota 785,3249.63
+45,9,2026-03-10,Instalações hidráulicas,Fornecedor Zeta Ltda,Instalações hidráulicas - nota 989,937.02
+46,5,2026-03-11,Instalações hidráulicas,Fornecedor Beta Ltda,Instalações hidráulicas - nota 530,1621.84
+47,7,2026-03-11,Equipamentos,Fornecedor Épsilon Ltda,Equipamentos - nota 646,4570.74
+48,3,2026-03-13,Mão de obra,Fornecedor Zeta Ltda,Mão de obra - nota 760,2293.57
+49,4,2026-03-14,Estrutura,Fornecedor Gama Ltda,Estrutura - nota 218,5454.83
+50,99,2026-03-14,Instalações elétricas,Fornecedor Alfa Ltda,Cabos e disjuntores - obra fora do cadastro,2180.00
+51,9,2026-03-22,Instalações elétricas,Fornecedor Gama Ltda,Instalações elétricas - nota 946,1821.62
+52,9,2026-03-23,Fundação,Fornecedor Beta Ltda,Fundação - nota 930,1035.60
+53,2,2026-03-24,Instalações elétricas,Fornecedor Gama Ltda,Instalações elétricas - nota 880,2041.85
+54,8,2026-03-24,Equipamentos,Fornecedor Delta Ltda,Equipamentos - nota 280,4551.56
+55,3,2026-03-25,Equipamentos,Fornecedor Beta Ltda,Equipamentos - nota 403,2793.61
+56,4,2026-03-25,Estrutura,Fornecedor Gama Ltda,Estrutura - nota 388,9516.02
+57,2,2026-03-26,Mão de obra,Fornecedor Delta Ltda,Mão de obra - nota 103,6854.52
+58,9,2026-03-26,Estrutura,Fornecedor Alfa Ltda,Estrutura - nota 518,979.45
+59,1,2026-03-27,Fundação,Fornecedor Zeta Ltda,Fundação - nota 532,2564.46
+60,2,2026-03-27,Alvenaria,Fornecedor Zeta Ltda,Alvenaria - nota 532,7038.31
+61,10,2026-03-27,Instalações elétricas,Fornecedor Gama Ltda,Instalações elétricas - nota 664,5061.48
+62,1,2026-03-29,Acabamento,Fornecedor Gama Ltda,Acabamento - nota 463,8678.30
+63,1,2026-03-29,Instalações elétricas,Fornecedor Delta Ltda,Instalações elétricas - nota 488,10517.87
+64,2,2026-03-30,Equipamentos,Fornecedor Gama Ltda,Equipamentos - nota 640,3478.22
+65,3,2026-03-31,Instalações elétricas,Fornecedor Delta Ltda,Instalações elétricas - nota 597,1978.58
+66,1,2026-04-02,Estrutura,Fornecedor Épsilon Ltda,Estrutura - nota 846,4776.93
+67,5,2026-04-04,Mão de obra,Fornecedor Épsilon Ltda,Mão de obra - nota 682,6374.12
+68,9,2026-04-06,Acabamento,Fornecedor Gama Ltda,Acabamento - nota 114,1243.46
+69,9,2026-04-09,Acabamento,Fornecedor Alfa Ltda,Acabamento - nota 358,1673.02
+70,9,2026-04-16,Instalações hidráulicas,Fornecedor Delta Ltda,Instalações hidráulicas - nota 217,732.59
+71,10,2026-04-19,Fundação,Fornecedor Gama Ltda,Fundação - nota 662,2711.49
+72,2,2026-04-23,Mão de obra,Fornecedor Épsilon Ltda,Mão de obra - nota 873,7582.13
+73,3,2026-04-24,Equipamentos,Fornecedor Delta Ltda,Equipamentos - nota 160,2695.72
+74,5,2026-04-24,Equipamentos,Fornecedor Épsilon Ltda,Equipamentos - nota 584,1583.28
+75,1,2026-04-27,Instalações hidráulicas,Fornecedor Zeta Ltda,Instalações hidráulicas - nota 432,9182.15
+76,4,2026-04-28,Equipamentos,Fornecedor Beta Ltda,Equipamentos - nota 936,6072.16
+77,4,2026-04-29,Instalações elétricas,Fornecedor Alfa Ltda,Instalações elétricas - nota 775,6293.06
+78,5,2026-04-30,Instalações hidráulicas,Fornecedor Beta Ltda,Instalações hidráulicas - nota 250,2724.24
+79,9,2026-04-30,Mão de obra,Fornecedor Épsilon Ltda,Mão de obra - nota 489,1446.94
+80,1,2026-05-02,Fundação,Fornecedor Alfa Ltda,Fundação - nota 924,5051.89
+81,6,2026-05-05,Instalações hidráulicas,Fornecedor Gama Ltda,Instalações hidráulicas - nota 443,1088.67
+82,4,2026-05-06,Alvenaria,Fornecedor Beta Ltda,Alvenaria - nota 919,5290.93
+83,2,2026-05-07,Instalações hidráulicas,Fornecedor Alfa Ltda,Instalações hidráulicas - nota 346,5965.24
+84,9,2026-05-07,Alvenaria,Fornecedor Beta Ltda,Alvenaria - nota 665,1787.14
+85,8,2026-05-09,Estrutura,Fornecedor Alfa Ltda,Estrutura - nota 813,3645.79
+86,2,2026-05-11,Estrutura,Fornecedor Beta Ltda,Estrutura - nota 165,6021.88
+87,4,2026-05-12,Instalações elétricas,Fornecedor Zeta Ltda,Instalações elétricas - nota 205,3621.85
+88,4,2026-05-19,Alvenaria,Fornecedor Beta Ltda,Alvenaria - nota 859,2379.69
+89,9,2026-05-20,Instalações elétricas,Fornecedor Zeta Ltda,Instalações elétricas - nota 183,810.22
+90,1,2026-05-21,Instalações elétricas,Fornecedor Zeta Ltda,Instalações elétricas - nota 799,2583.87
+91,4,2026-05-21,Instalações elétricas,Fornecedor Beta Ltda,Instalações elétricas - nota 906,9988.04
+92,6,2026-05-25,Instalações elétricas,Fornecedor Delta Ltda,Instalações elétricas - nota 179,1738.18
+93,9,2026-05-25,Alvenaria,Fornecedor Alfa Ltda,Alvenaria - nota 155,385.62
+94,6,2026-05-26,Instalações elétricas,Fornecedor Épsilon Ltda,Instalações elétricas - nota 596,1461.03
+95,8,2026-05-26,Instalações hidráulicas,Fornecedor Épsilon Ltda,Instalações hidráulicas - nota 110,4204.04
+96,1,2026-05-27,Acabamento,Fornecedor Beta Ltda,Acabamento - nota 320,5746.70
+97,3,2026-05-27,Alvenaria,Fornecedor Delta Ltda,Alvenaria - nota 355,918.62
+98,7,2026-05-27,Mão de obra,Fornecedor Delta Ltda,Mão de obra - nota 358,4887.90
+99,8,2026-05-27,Estrutura,Fornecedor Delta Ltda,Estrutura - nota 349,5619.02
+100,9,2026-06-01,Instalações hidráulicas,Fornecedor Delta Ltda,Instalações hidráulicas - nota 227,1524.97
+101,9,2026-06-01,Instalações elétricas,Fornecedor Zeta Ltda,Instalações elétricas - nota 389,2244.19
+102,10,2026-06-01,Equipamentos,Fornecedor Zeta Ltda,Equipamentos - nota 510,3378.24
+103,10,2026-06-01,Alvenaria,Fornecedor Delta Ltda,Alvenaria - nota 815,5770.52
+104,99,2026-06-02,Equipamentos,Fornecedor Beta Ltda,Aluguel de betoneira - obra fora do cadastro,1690.00
+105,2,2026-06-06,Estrutura,Fornecedor Zeta Ltda,Estrutura - nota 619,2062.79
+106,5,2026-06-07,Estrutura,Fornecedor Épsilon Ltda,Estrutura - nota 416,3960.99
+107,5,2026-06-09,Fundação,Fornecedor Gama Ltda,Fundação - nota 315,6330.41
+108,9,2026-06-09,Equipamentos,Fornecedor Zeta Ltda,Equipamentos - nota 512,1864.62
+109,9,2026-06-10,Mão de obra,Fornecedor Épsilon Ltda,Mão de obra - nota 735,1254.55
+110,2,2026-06-13,Instalações elétricas,Fornecedor Delta Ltda,Instalações elétricas - nota 787,2033.46
+111,3,2026-06-14,Instalações elétricas,Fornecedor Beta Ltda,Instalações elétricas - nota 371,2071.74
+112,3,2026-06-14,Fundação,Fornecedor Alfa Ltda,Fundação - nota 151,4133.02
+113,5,2026-06-14,Acabamento,Fornecedor Zeta Ltda,Acabamento - nota 968,6433.87
+114,6,2026-06-16,Equipamentos,Fornecedor Delta Ltda,Equipamentos - nota 727,1835.59
+115,5,2026-06-18,Mão de obra,Fornecedor Delta Ltda,Mão de obra - nota 552,2456.21
+116,10,2026-06-18,Acabamento,Fornecedor Zeta Ltda,Acabamento - nota 207,8908.34
+117,8,2026-06-19,Instalações hidráulicas,Fornecedor Beta Ltda,Instalações hidráulicas - nota 950,4903.00
+118,9,2026-06-19,Mão de obra,Fornecedor Épsilon Ltda,Mão de obra - nota 356,2008.79
+119,10,2026-06-19,Instalações hidráulicas,Fornecedor Alfa Ltda,Instalações hidráulicas - nota 891,7065.35
+120,8,2026-06-20,Equipamentos,Fornecedor Beta Ltda,Equipamentos - nota 599,995.34
+121,5,2026-06-21,Mão de obra,Fornecedor Delta Ltda,Mão de obra - nota 813,6200.92
+122,7,2026-06-21,Equipamentos,Fornecedor Gama Ltda,Equipamentos - nota 879,9274.43
+123,10,2026-06-22,Alvenaria,Fornecedor Delta Ltda,Alvenaria - nota 810,6429.16
+124,2,2026-06-28,Instalações hidráulicas,Fornecedor Alfa Ltda,Instalações hidráulicas - nota 400,4364.69
+125,4,2026-06-29,Instalações elétricas,Fornecedor Beta Ltda,Instalações elétricas - nota 803,9573.83
+126,8,2026-07-01,Fundação,Fornecedor Épsilon Ltda,Fundação - nota 538,4312.95
+127,4,2026-07-03,Equipamentos,Fornecedor Gama Ltda,Equipamentos - nota 940,7268.00
+128,7,2026-07-03,Fundação,Fornecedor Beta Ltda,Fundação - nota 765,5931.25
+129,8,2026-07-05,Instalações elétricas,Fornecedor Gama Ltda,Instalações elétricas - nota 448,2404.93
+130,1,2026-07-07,Estrutura,Fornecedor Gama Ltda,Estrutura - nota 718,11619.95
+131,1,2026-07-09,Instalações hidráulicas,Fornecedor Épsilon Ltda,Instalações hidráulicas - nota 296,3352.68
+132,4,2026-07-10,Instalações hidráulicas,Fornecedor Alfa Ltda,Instalações hidráulicas - nota 466,2111.20
+133,5,2026-07-10,Instalações elétricas,Fornecedor Delta Ltda,Instalações elétricas - nota 171,3202.14
+134,4,2026-07-13,Fundação,Fornecedor Épsilon Ltda,Fundação - nota 665,2659.23
+135,1,2026-07-17,Estrutura,Fornecedor Alfa Ltda,Estrutura - nota 665,13601.81
+136,1,2026-07-18,Estrutura,Fornecedor Gama Ltda,Estrutura - nota 564,5028.95
+137,3,2026-07-18,Alvenaria,Fornecedor Alfa Ltda,Alvenaria - nota 499,1775.79
+138,7,2026-07-18,Instalações hidráulicas,Fornecedor Gama Ltda,Instalações hidráulicas - nota 316,8453.76
+139,8,2026-07-18,Equipamentos,Fornecedor Gama Ltda,Equipamentos - nota 129,1401.16
+140,4,2026-07-19,Estrutura,Fornecedor Alfa Ltda,Estrutura - nota 979,8466.55
+141,6,2026-07-20,Instalações elétricas,Fornecedor Zeta Ltda,Instalações elétricas - nota 256,629.45
+142,2,2026-07-21,Estrutura,Fornecedor Delta Ltda,Estrutura - nota 710,4803.60
+143,5,2026-07-21,Estrutura,Fornecedor Épsilon Ltda,Estrutura - nota 294,6354.61
+144,7,2026-07-25,Fundação,Fornecedor Épsilon Ltda,Fundação - nota 677,1496.89
+145,4,2026-07-28,Instalações elétricas,Fornecedor Gama Ltda,Instalações elétricas - nota 385,9539.70
+146,1,2026-07-29,Acabamento,Fornecedor Gama Ltda,Acabamento - nota 167,9746.39
+147,3,2026-07-30,Instalações elétricas,Fornecedor Alfa Ltda,Instalações elétricas - nota 683,2277.69
+148,5,2026-07-31,Instalações hidráulicas,Fornecedor Épsilon Ltda,Instalações hidráulicas - nota 953,1973.24
+149,7,2026-07-31,Acabamento,Fornecedor Zeta Ltda,Acabamento - nota 269,7732.64
+150,4,2026-08-01,Acabamento,Fornecedor Épsilon Ltda,Acabamento - nota 867,3972.22
+151,10,2026-08-01,Fundação,Fornecedor Alfa Ltda,Fundação - nota 330,2027.88
+152,4,2026-08-03,Acabamento,Fornecedor Zeta Ltda,Acabamento - nota 984,4123.11
+153,4,2026-08-04,Alvenaria,Fornecedor Alfa Ltda,Alvenaria - nota 283,6195.06
+154,10,2026-08-04,Equipamentos,Fornecedor Alfa Ltda,Equipamentos - nota 292,6271.82
+155,6,2026-08-08,Instalações elétricas,Fornecedor Delta Ltda,Instalações elétricas - nota 888,2014.27
+156,6,2026-08-10,Estrutura,Fornecedor Beta Ltda,Estrutura - nota 280,432.56
+157,4,2026-08-11,Equipamentos,Fornecedor Épsilon Ltda,Equipamentos - nota 109,6147.00
+158,4,2026-08-13,Alvenaria,Fornecedor Beta Ltda,Alvenaria - nota 142,4523.31
+159,2,2026-08-17,Acabamento,Fornecedor Épsilon Ltda,Acabamento - nota 562,4327.77
+160,3,2026-08-19,Estrutura,Fornecedor Épsilon Ltda,Estrutura - nota 200,951.90
+161,9,2026-08-19,Equipamentos,Fornecedor Gama Ltda,Equipamentos - nota 980,1051.63
+162,6,2026-08-21,Mão de obra,Fornecedor Beta Ltda,Mão de obra - nota 861,1227.44
+163,3,2026-08-22,Instalações elétricas,Fornecedor Beta Ltda,Instalações elétricas - nota 532,3451.73
+164,6,2026-08-23,Equipamentos,Fornecedor Gama Ltda,Equipamentos - nota 869,2064.12
+165,3,2026-08-25,Instalações hidráulicas,Fornecedor Gama Ltda,Instalações hidráulicas - nota 533,2583.53
+166,10,2026-08-25,Fundação,Fornecedor Alfa Ltda,Fundação - nota 422,1641.48
+167,6,2026-08-26,Estrutura,Fornecedor Beta Ltda,Estrutura - nota 920,1530.19
+168,7,2026-08-29,Alvenaria,Fornecedor Beta Ltda,Alvenaria - nota 151,7633.16
+169,10,2026-08-29,Estrutura,Fornecedor Alfa Ltda,Estrutura - nota 763,3972.55
+170,6,2026-08-31,Acabamento,Fornecedor Delta Ltda,Acabamento - nota 163,2076.79
+171,7,2026-09-02,Estrutura,Fornecedor Alfa Ltda,Estrutura - nota 867,7584.25
+172,9,2026-09-02,Instalações hidráulicas,Fornecedor Delta Ltda,Instalações hidráulicas - nota 551,835.63
+173,9,2026-09-02,Equipamentos,Fornecedor Gama Ltda,Equipamentos - nota 133,1830.13
+174,8,2026-09-05,Instalações elétricas,Fornecedor Zeta Ltda,Instalações elétricas - nota 828,4389.59
+175,8,2026-09-09,Instalações hidráulicas,Fornecedor Delta Ltda,Instalações hidráulicas - nota 546,1432.84
+176,7,2026-09-10,Mão de obra,Fornecedor Alfa Ltda,Mão de obra - nota 498,8480.72
+177,8,2026-09-12,Mão de obra,Fornecedor Épsilon Ltda,Mão de obra - nota 876,2821.96
+178,10,2026-09-17,Acabamento,Fornecedor Zeta Ltda,Acabamento - nota 552,8275.85
+179,2,2026-09-18,Instalações hidráulicas,Fornecedor Beta Ltda,Instalações hidráulicas - nota 619,5292.41
+180,9,2026-09-18,Instalações hidráulicas,Fornecedor Épsilon Ltda,Instalações hidráulicas - nota 605,1539.31
+181,3,2026-09-19,Equipamentos,Fornecedor Épsilon Ltda,Equipamentos - nota 261,2937.94
+182,4,2026-09-20,Instalações hidráulicas,Fornecedor Delta Ltda,Instalações hidráulicas - nota 357,1599.24
+183,3,2026-09-22,Fundação,Fornecedor Alfa Ltda,Fundação - nota 971,1637.31
+184,10,2026-09-25,Mão de obra,Fornecedor Alfa Ltda,Mão de obra - nota 773,4900.71
+185,5,2026-09-28,Fundação,Fornecedor Épsilon Ltda,Fundação - nota 803,4546.05
+186,3,2026-09-29,Mão de obra,Fornecedor Gama Ltda,Mão de obra - nota 367,3261.02
+187,2,2026-10-02,Equipamentos,Fornecedor Gama Ltda,Equipamentos - nota 666,5777.27

@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<title>Gasto por obra - Construtora Exemplo</title>
+<link rel="icon" href="data:,">
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #f4f4f1; --surface: #fcfcfb; --ink: #0b0b0b; --ink2: #52514e; --linha: #dcdbd5;
+  --serie: #2a78d6; --erro: #d03b3b; --neutro: #8a8983; --bom: #0c7a0c;
+  --aviso-bg: #fff3cf; --aviso-borda: #c98500; --erro-bg: #fbe6e6;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121211; --surface: #1a1a19; --ink: #f0efec; --ink2: #c3c2b7; --linha: #3a3a37;
+    --serie: #3987e5; --erro: #e66767; --neutro: #8a8983; --bom: #3fbf3f;
+    --aviso-bg: #3a2d06; --aviso-borda: #fab219; --erro-bg: #3d1c1c;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+main { max-width: 980px; margin: 0 auto; padding: 24px 16px 48px; }
+h1 { font-size: 22px; margin: 0 0 4px; }
+h2 { font-size: 16px; margin: 0 0 12px; }
+.sub { color: var(--ink2); margin: 0 0 16px; }
+.banner { display: flex; gap: 12px; background: var(--aviso-bg); border: 1px solid var(--aviso-borda); border-left-width: 6px;
+  border-radius: 6px; padding: 12px 16px; margin: 0 0 16px; }
+.banner svg { flex: none; margin-top: 2px; }
+.banner p { margin: 0 0 6px; } .banner p:last-child { margin: 0; }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin: 0 0 16px; }
+.kpi { background: var(--surface); border: 1px solid var(--linha); border-radius: 8px; padding: 12px 16px; }
+.kpi .rot { color: var(--ink2); font-size: 13px; }
+.kpi .num { font-size: 24px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.kpi .det { color: var(--ink2); font-size: 13px; }
+.card { background: var(--surface); border: 1px solid var(--linha); border-radius: 8px; padding: 16px; margin: 0 0 16px; position: relative; }
+.barra-topo { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; margin: 0 0 12px; }
+.barra-topo h2 { margin: 0; }
+.seg { display: inline-flex; border: 1px solid var(--linha); border-radius: 8px; overflow: hidden; }
+.seg button { font: inherit; color: var(--ink); background: transparent; border: 0; padding: 0 14px; min-height: 44px; cursor: pointer; }
+.seg button + button { border-left: 1px solid var(--linha); }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--surface); font-weight: 600; }
+.seg button:focus-visible { outline: 3px solid var(--serie); outline-offset: -3px; }
+.selo-erro { display: inline-block; background: var(--erro-bg); color: var(--ink); border: 1px solid var(--erro); border-radius: 4px;
+  font-size: 12px; font-weight: 700; padding: 1px 8px; margin-left: 8px; vertical-align: 2px; }
+.legenda { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0 0 8px; padding: 0; list-style: none; color: var(--ink2); font-size: 13px; }
+.legenda i { display: inline-block; width: 22px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+.h { background-image: repeating-linear-gradient(135deg, rgba(255,255,255,.6) 0 2px, transparent 2px 6px); }
+.c-serie { background-color: var(--serie); } .c-erro { background-color: var(--erro); } .c-neutro { background-color: var(--neutro); }
+#grafico svg { display: block; }
+svg text { fill: var(--ink); } svg .l2, svg .vl2 { fill: var(--ink2); }
+.l1 { font: 600 13px system-ui, sans-serif; } .l2 { font: 12px system-ui, sans-serif; } .vl { font: 600 13px system-ui, sans-serif; font-variant-numeric: tabular-nums; }
+.nota { color: var(--ink2); font-size: 14px; margin: 8px 0 0; }
+.nota ul { margin: 4px 0 8px; padding-left: 20px; }
+#dica { position: absolute; pointer-events: none; background: var(--ink); color: var(--surface); border-radius: 6px; padding: 6px 10px;
+  font-size: 13px; line-height: 1.35; white-space: nowrap; display: none; z-index: 2; }
+.tabela { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+th, td { text-align: right; padding: 6px 10px; border-bottom: 1px solid var(--linha); white-space: nowrap; }
+th:first-child, td:first-child { text-align: left; white-space: normal; }
+th { color: var(--ink2); font-size: 13px; font-weight: 600; }
+tfoot td { font-weight: 650; border-bottom: 0; }
+.conf { list-style: none; margin: 0; padding: 0; }
+.conf li { display: flex; gap: 10px; align-items: baseline; padding: 6px 0; border-bottom: 1px solid var(--linha); }
+.conf li:last-child { border-bottom: 0; }
+.selo { flex: none; min-width: 84px; text-align: center; font-size: 12px; font-weight: 700; border-radius: 4px; padding: 1px 8px; border: 1px solid; }
+.selo.ok { border-color: var(--bom); } .selo.falhou { border-color: var(--erro); background: var(--erro-bg); } .selo.aviso { border-color: var(--aviso-borda); background: var(--aviso-bg); }
+footer { color: var(--ink2); font-size: 13px; }
+code { font: 13px ui-monospace, Consolas, monospace; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Gasto por obra</h1>
+  <p class="sub">Construtora Exemplo. Dados fictícios gerados por <code>gerar_dados.py</code> (semente 42): uma reprodução de um erro que aconteceu de verdade com dados reais.</p>
+
+  <div id="banner"></div>
+  <div class="kpis" id="kpis"></div>
+
+  <section class="card" aria-labelledby="t-grafico">
+    <div class="barra-topo">
+      <h2 id="t-grafico"></h2>
+      <div class="seg" role="group" aria-label="Agrupar por">
+        <button type="button" data-modo="id" aria-pressed="true">Agrupar por id (certo)</button>
+        <button type="button" data-modo="nome" aria-pressed="false">Agrupar por nome (o erro)</button>
+      </div>
+    </div>
+    <ul class="legenda" id="legenda"></ul>
+    <div id="grafico"></div>
+    <div id="dica" role="tooltip"></div>
+    <div class="nota" id="nota"></div>
+  </section>
+
+  <section class="card" aria-labelledby="t-conf">
+    <h2 id="t-conf">Conferência do que está na tela</h2>
+    <ul class="conf" id="conf"></ul>
+  </section>
+
+  <section class="card" aria-labelledby="t-tab">
+    <h2 id="t-tab">Mesmos números em tabela</h2>
+    <div class="tabela"><table id="tabela"></table></div>
+  </section>
+
+  <footer>Arquivo único, sem biblioteca externa. Os números estão embutidos abaixo como JSON e foram calculados pelo Python; o JavaScript não calcula totais por obra nem agrupa, só desenha, soma o que recebeu para refazer a conferência e mostra percentuais. Para regenerar: <code>python gerar_dashboard.py</code>.</footer>
+</main>
+
+<script id="dados" type="application/json">__DADOS__</script>
+<script>
+(function () {
+  "use strict";
+  var D = JSON.parse(document.getElementById("dados").textContent);
+  var C = D.conferencia;
+  var modo = "id";
+  var NS = "http://www.w3.org/2000/svg";
+
+  function brl(c) { return (c / 100).toLocaleString("pt-BR", { style: "currency", currency: "BRL" }); }
+  function pct(c) { return (c / D.totalGeralCentavos * 100).toLocaleString("pt-BR", { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + "%"; }
+  function lista(xs) { return xs.length < 2 ? xs.join("") : xs.slice(0, -1).join(", ") + " e " + xs[xs.length - 1]; }
+  function mk(ns, tag, attrs) {
+    var e = ns ? document.createElementNS(ns, tag) : document.createElement(tag);
+    for (var k in attrs || {}) e.setAttribute(k, attrs[k]);
+    for (var i = 3; i < arguments.length; i++) e.append(arguments[i]);
+    return e;
+  }
+  function h(tag, attrs) { return mk.apply(null, [null].concat([].slice.call(arguments))); }
+  function s(tag, attrs) { return mk.apply(null, [NS].concat([].slice.call(arguments))); }
+  function limpa(el) { while (el.firstChild) el.removeChild(el.firstChild); return el; }
+
+  // --- linhas de cada modo -------------------------------------------------
+  function linhas() {
+    if (modo === "id") return D.porId.map(function (r) {
+      return { rotulo: r.orfao ? "Sem obra no cadastro" : r.nome + " #" + r.obraId,
+               sub: r.orfao ? "obra_id " + C.orfaos.obraIds.join(", ") : r.bairro,
+               ids: r.orfao ? C.orfaos.obraIds : [r.obraId], centavos: r.centavos, n: r.lancamentos,
+               tipo: r.orfao ? "orfao" : r.nomeRepetido ? "repetido" : "normal" };
+    });
+    return D.porNome.map(function (r) {
+      return { rotulo: r.nome, sub: r.obraIds.length > 1 ? "junta as obras " + r.obraIds.join(", ") : "obra " + r.obraIds[0],
+               ids: r.obraIds, centavos: r.centavos, n: r.lancamentos, tipo: r.obraIds.length > 1 ? "misturado" : "normal" };
+    });
+  }
+
+  // --- aviso, indicadores --------------------------------------------------
+  function desenhaBanner() {
+    var el = limpa(document.getElementById("banner"));
+    if (!C.nomesRepetidos.length && !C.nomesParecidos.length && !C.orfaos.quantidade) return;
+    var icone = s("svg", { width: 22, height: 22, viewBox: "0 0 24 24", "aria-hidden": "true" },
+      s("path", { d: "M12 2 1 21h22L12 2z", fill: "#fab219", stroke: "#8a5a00", "stroke-width": 1.5, "stroke-linejoin": "round" }),
+      s("path", { d: "M12 9v6m0 3v.01", stroke: "#0b0b0b", "stroke-width": 2.2, "stroke-linecap": "round" }));
+    var corpo = h("div", {});
+    if (C.nomesRepetidos.length) {
+      var gs = C.nomesRepetidos.map(function (g) { return g.nome + " (obras " + lista(g.obraIds) + ")"; });
+      corpo.append(h("p", {}, h("strong", {}, "Atenção: há nomes de obra repetidos. "),
+        lista(gs) + " têm o mesmo nome em obras diferentes. Agrupar por nome soma obras diferentes" +
+          (modo === "id" ? "; este painel agrupa por id." : ": é o que o gráfico mostra agora, e é o erro.")));
+    }
+    C.nomesParecidos.forEach(function (g) {
+      corpo.append(h("p", {}, "Nomes quase iguais, possível cadastro duplicado: " + g.nomes.join(" / ") + " (obras " + lista(g.obraIds) + ")."));
+    });
+    if (C.orfaos.quantidade) {
+      corpo.append(h("p", {}, C.orfaos.quantidade + " lançamentos (" + brl(C.orfaos.centavos) + ") apontam para obra_id " +
+        C.orfaos.obraIds.join(", ") + ", que não existe no cadastro. " +
+        (modo === "id" ? "No gráfico por id eles aparecem na barra cinza." : "Agrupado por nome, eles somem do gráfico.")));
+    }
+    el.append(h("div", { "class": "banner", role: "alert" }, icone, corpo));
+  }
+
+  function desenhaKpis() {
+    var el = limpa(document.getElementById("kpis"));
+    [["Gasto total", brl(D.totalGeralCentavos), "soma de todos os lançamentos"],
+     ["Obras cadastradas", String(C.obrasCadastradas), "nomes distintos: " + C.nomesDistintos],
+     ["Nomes repetidos", String(C.nomesRepetidos.length), "cada um aponta para mais de uma obra"],
+     ["Lançamentos sem obra", String(C.orfaos.quantidade), brl(C.orfaos.centavos) + " fora do cadastro"]
+    ].forEach(function (k) {
+      el.append(h("div", { "class": "kpi" }, h("div", { "class": "rot" }, k[0]), h("div", { "class": "num" }, k[1]), h("div", { "class": "det" }, k[2])));
+    });
+  }
+
+  // --- gráfico de barras (SVG) ---------------------------------------------
+  var LINHA = 50, DIREITA = 120;
+  function desenhaGrafico() {
+    var rs = linhas(), box = limpa(document.getElementById("grafico"));
+    var W = Math.max(box.clientWidth || 640, 280), area = W - DIREITA, max = Math.max.apply(null, rs.map(function (r) { return r.centavos; }));
+    var svg = s("svg", { width: W, height: rs.length * LINHA + 4, role: "img",
+      "aria-label": "Gasto por " + (modo === "id" ? "obra, agrupado por id" : "nome de obra, agrupado por nome (errado)") + ". Os mesmos números estão na tabela abaixo." });
+    svg.append(s("defs", {}, s("pattern", { id: "hach", width: 6, height: 6, patternUnits: "userSpaceOnUse", patternTransform: "rotate(45)" },
+      s("rect", { width: 2, height: 6, fill: "rgba(255,255,255,.6)" }))));
+    rs.forEach(function (r, i) {
+      var y = i * LINHA, w = Math.max(4, Math.round(area * r.centavos / max));
+      var cor = r.tipo === "misturado" ? "var(--erro)" : r.tipo === "orfao" ? "var(--neutro)" : "var(--serie)";
+      var forma = "M0," + (y + 22) + "H" + (w - 4) + "a4,4 0 0 1 4,4v6a4,4 0 0 1 -4,4H0z";
+      var g = s("g", {});
+      g.append(s("text", { x: 0, y: y + 14, "class": "l1" }, rotuloComSub(r)));
+      g.append(s("path", { d: forma, fill: cor }));
+      if (r.tipo !== "normal") g.append(s("path", { d: forma, fill: "url(#hach)" }));
+      g.append(s("text", { x: w + 8, y: y + 35, "class": "vl" }, brl(r.centavos)));
+      g.append(s("rect", { x: 0, y: y, width: W, height: LINHA, fill: "transparent", "data-i": i }));
+      svg.append(g);
+    });
+    box.append(svg);
+    svg.addEventListener("pointermove", function (ev) {
+      var alvo = ev.target.getAttribute && ev.target.getAttribute("data-i");
+      var dica = document.getElementById("dica");
+      if (alvo === null || alvo === undefined) { dica.style.display = "none"; return; }
+      var r = rs[+alvo], card = svg.closest(".card").getBoundingClientRect();
+      limpa(dica).append(h("strong", {}, r.rotulo), h("br"), brl(r.centavos) + " (" + pct(r.centavos) + " do total)", h("br"), r.n + " lançamentos");
+      dica.style.display = "block";
+      dica.style.left = Math.min(ev.clientX - card.left + 14, card.width - dica.offsetWidth - 8) + "px";
+      dica.style.top = (ev.clientY - card.top + 14) + "px";
+    });
+    svg.addEventListener("pointerleave", function () { document.getElementById("dica").style.display = "none"; });
+  }
+  function rotuloComSub(r) {
+    var t = s("tspan", {}, r.rotulo), sub = s("tspan", { "class": "l2", dx: 8 }, r.sub);
+    var fr = document.createDocumentFragment(); fr.append(t, sub); return fr;
+  }
+
+  function desenhaLegenda() {
+    var el = limpa(document.getElementById("legenda"));
+    var itens = modo === "id"
+      ? [["c-serie", "obra com nome único"], ["c-serie h", "obra cujo nome se repete em outra obra"], ["c-neutro h", "lançamentos sem obra no cadastro"]]
+      : [["c-serie", "obra com nome único"], ["c-erro h", "linha que mistura mais de uma obra"]];
+    itens.forEach(function (it) { el.append(h("li", {}, h("i", { "class": it[0] }), it[1])); });
+  }
+
+  // --- texto explicativo, conferência, tabela -------------------------------
+  function desenhaNota() {
+    var el = limpa(document.getElementById("nota"));
+    if (modo === "id") {
+      el.append("Cada barra é uma obra, identificada pelo id. Nas barras listradas o nome é igual ao de outra obra, por isso o rótulo traz o #id.");
+      return;
+    }
+    el.append("É assim que sai quando se agrupa por nome:");
+    var ul = h("ul", {});
+    linhas().filter(function (r) { return r.tipo === "misturado"; }).forEach(function (r) {
+      var partes = r.ids.map(function (id) {
+        var o = D.porId.filter(function (p) { return p.obraId === id; })[0];
+        return "obra " + id + " (" + brl(o.centavos) + ")";
+      });
+      ul.append(h("li", {}, r.rotulo + ": " + brl(r.centavos) + " = " + partes.join(" + ")));
+    });
+    el.append(ul, "A soma das linhas só destoa pelos lançamentos sem obra: juntar duas obras não muda a soma. " +
+      "Por isso conferir só o total não pega este erro; contar as linhas contra as obras cadastradas pega.");
+  }
+
+  function desenhaConferencia(rs) {
+    var el = limpa(document.getElementById("conf"));
+    var soma = rs.reduce(function (a, r) { return a + r.centavos; }, 0);
+    var nObras = rs.filter(function (r) { return r.tipo !== "orfao"; }).length;
+    function item(estado, texto) {
+      var rot = { ok: "OK", falhou: "FALHOU", aviso: "ATENÇÃO" }[estado];
+      var glifo = { ok: "✓ ", falhou: "✕ ", aviso: "! " }[estado];
+      el.append(h("li", {}, h("span", { "class": "selo " + estado }, glifo + rot), h("span", {}, texto)));
+    }
+    var igual = soma === D.totalGeralCentavos;
+    item(igual ? "ok" : "falhou", "Soma das partes " + brl(soma) + (igual ? " = " : " ≠ ") + "total geral " + brl(D.totalGeralCentavos) +
+      (igual ? "" : " (diferença de " + brl(D.totalGeralCentavos - soma) + ")"));
+    var casa = nObras === C.obrasCadastradas;
+    item(casa ? "ok" : "falhou", nObras + " linhas de obra para " + C.obrasCadastradas + " obras cadastradas" + (casa ? "" : ": alguma obra foi juntada a outra"));
+    if (C.orfaos.quantidade) item("aviso", C.orfaos.quantidade + " lançamentos sem obra no cadastro (" + brl(C.orfaos.centavos) + ")" +
+      (modo === "id" ? ", mostrados na barra cinza" : ", que este agrupamento deixou de fora"));
+    C.nomesRepetidos.forEach(function (g) { item("aviso", "Nome repetido: " + g.nome + ", obras " + lista(g.obraIds)); });
+    C.nomesParecidos.forEach(function (g) { item("aviso", "Nomes parecidos: " + g.nomes.join(" / ") + ", obras " + lista(g.obraIds)); });
+  }
+
+  function desenhaTabela(rs) {
+    var t = limpa(document.getElementById("tabela"));
+    t.append(h("thead", {}, h("tr", {}, h("th", {}, modo === "id" ? "Obra" : "Nome"), h("th", {}, modo === "id" ? "id" : "ids juntados"),
+      h("th", {}, "Lançamentos"), h("th", {}, "Total"), h("th", {}, "% do total geral"))));
+    var corpo = h("tbody", {}), n = 0, soma = 0;
+    rs.forEach(function (r) {
+      n += r.n; soma += r.centavos;
+      corpo.append(h("tr", {}, h("td", {}, r.tipo === "orfao" ? "Sem obra no cadastro" : r.rotulo), h("td", {}, r.ids.join(", ")),
+        h("td", {}, String(r.n)), h("td", {}, brl(r.centavos)), h("td", {}, pct(r.centavos))));
+    });
+    t.append(corpo, h("tfoot", {}, h("tr", {}, h("td", {}, "Soma das linhas"), h("td", {}), h("td", {}, String(n)), h("td", {}, brl(soma)), h("td", {}, pct(soma)))));
+  }
+
+  function tudo() {
+    var rs = linhas();
+    var titulo = limpa(document.getElementById("t-grafico"));
+    titulo.append(modo === "id" ? "Gasto por obra, agrupado por id" : "Gasto por obra, agrupado por nome");
+    if (modo === "nome") titulo.append(h("span", { "class": "selo-erro" }, "✕ ERRADO"));
+    document.querySelectorAll(".seg button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.modo === modo)); });
+    desenhaBanner(); desenhaLegenda(); desenhaGrafico(); desenhaNota(); desenhaConferencia(rs); desenhaTabela(rs);
+  }
+
+  document.querySelectorAll(".seg button").forEach(function (b) {
+    b.addEventListener("click", function () { modo = b.dataset.modo; tudo(); });
+  });
+  if (window.ResizeObserver) {
+    var larguraAntes = 0;
+    new ResizeObserver(function (es) {
+      var w = Math.round(es[0].contentRect.width);
+      if (w !== larguraAntes) { larguraAntes = w; desenhaGrafico(); }
+    }).observe(document.getElementById("grafico"));
+  }
+  desenhaKpis(); tudo();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+obra_id,nome,bairro,tipo
+1,Residencial Aurora,Bairro Alfa,residencial
+2,Edifício Horizonte,Bairro Beta,comercial
+3,Casa Lago Azul,Bairro Gama,residencial
+4,Condominio Jardim Sul,Bairro Delta,residencial
+5,Galpão Central,Bairro Épsilon,industrial
+6,Reforma Loja Praça,Bairro Zeta,comercial
+7,Residencial Aurora,Bairro Eta,residencial
+8,Edifício Horizonte,Bairro Teta,comercial
+9,Condomínio Jardim Sul,Bairro Iota,residencial
+10,Clínica Vida,Bairro Capa,comercial
